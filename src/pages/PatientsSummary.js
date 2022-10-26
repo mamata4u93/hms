@@ -1,29 +1,31 @@
 import { useState } from 'react';
 import {
-    Grid, Dialog, Group, Button, TextInput, Text,
-    Avatar,
-    Badge,
-    Table,
-    ActionIcon,
-    Anchor,
-    ScrollArea,
-    useMantineTheme,
-
-
+    Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio
 } from '@mantine/core';
 import {
     IconArrowBigTop,
     IconArrowBigDown,
     IconLayoutGrid,
-    IconPencil, IconTrash
+    IconCircleCaretRight,
+    IconSearch,
+    IconPencil,
+    IconCirclePlus,
+    IconCalendarMinus,
+    IconPhoneOutgoing
 } from '@tabler/icons';
 
 const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
+    { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
 
 
 ];
@@ -31,6 +33,7 @@ const elements = [
 
 function PatientsSummary() {
     const [opened, setOpened] = useState(false);
+    const [redeo, setRedeo] = useState(false);
 
     const rows = elements.map((element) => (
         <tr key={element.name}>
@@ -38,13 +41,27 @@ function PatientsSummary() {
             <td>{element.name}</td>
             <td>{element.symbol}</td>
             <td>{element.mass}</td>
+            <td>{element.department}</td>
             <td>
-                <Group spacing={0} position="right">
-                    <ActionIcon>
-                        <IconPencil size={16} stroke={1.5} />
+                <Group spacing={0} position="left">
+                    <ActionIcon color="#005963;">
+                        <IconCircleCaretRight size={17} stroke={1.5} />
                     </ActionIcon>
-                    <ActionIcon color="red">
-                        <IconTrash size={16} stroke={1.5} />
+
+                    <ActionIcon color="#005963;">
+                        <IconPencil size={17} stroke={1.5} />
+                    </ActionIcon>
+
+                    <ActionIcon color="#005963;">
+                        <IconCirclePlus size={17} stroke={1.5} />
+                    </ActionIcon>
+
+                    <ActionIcon color="#005963;">
+                        <IconCalendarMinus size={17} stroke={1.5} />
+                    </ActionIcon>
+
+                    <ActionIcon color="#005963;">
+                        <IconPhoneOutgoing size={17} stroke={1.5} />
                     </ActionIcon>
                 </Group>
             </td>
@@ -63,24 +80,23 @@ function PatientsSummary() {
                             <Button>
                                 create patient
                             </Button>
+
                             <Group >
                                 <span onClick={() => setOpened((o) => !o)}><IconArrowBigTop /></span>
                             </Group>
-
                             <Dialog
                                 opened={opened}
                                 withCloseButton
                                 onClose={() => setOpened(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 160, right: 20 }}
+                                position={{ top: 90, right: 20 }}
                             >
                                 <Text>
                                     Lorem ipsum is a dummy text is a simply industry stan
                                 </Text>
+
                             </Dialog>
-
-
 
                             <Group >
                                 <span onClick={() => setOpened((o) => !o)}><IconArrowBigDown /></span>
@@ -91,25 +107,52 @@ function PatientsSummary() {
                                 onClose={() => setOpened(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 160, right: 20 }}
+                                position={{ top: 90, right: 20 }}
                             >
                                 <Text>
-                                    Lorem ipsum is a dummy text is a simply industry stan
+                                    dsfdssdfdssfd
                                 </Text>
                             </Dialog>
+
                             <Group >
                                 <span onClick={() => setOpened((o) => !o)}><IconLayoutGrid /></span>
                             </Group>
-                             <Dialog
+                            <Dialog
                                 opened={opened}
                                 withCloseButton
                                 onClose={() => setOpened(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 160, right: 20 }}
+                                position={{ top: 90, right: 20 }}
                             >
                                 <Text>
-                                    Lorem ipsum is a dummy text is a simply industry stan
+                                    <div>
+                                        <TextInput
+                                            icon={<IconSearch size={18} stroke={1.5} />}
+                                            radius="xl"
+                                            size="md"
+                                            placeholder="Search questions"
+                                            rightSectionWidth={42}
+
+                                        />
+                                    </div>
+                                    <div className='radio-section'>
+                                        <Radio label="Patient Name" />
+                                        <Radio label="Patient ID" />
+                                        <Radio label="Contact Number" />
+                                        <Radio label="Doctor Name" />
+                                        <Radio label="Lorem Ipsum is simply dummy " />
+                                        <Radio label="Lorem Ipsum is simply " />
+                                        <Radio label="Lorem Ipsum is simply dummy " />
+                                        <Radio label="Lorem Ipsum is simply " />
+                                        <Radio label="Lorem Ipsum is simply dummy " />
+                                        <Radio label="Lorem Ipsum is simply " />
+                                        <Radio label="Lorem Ipsum is simply dummy " />
+                                        <Radio label="Lorem Ipsum is simply " />
+                                        <Radio label="Lorem Ipsum is simply dummy " />
+                                        <Radio label="Lorem Ipsum is simply " />
+                                        <a href='#'>ApplY Filters</a>
+                                    </div>
                                 </Text>
                             </Dialog>
                         </div>
@@ -120,10 +163,12 @@ function PatientsSummary() {
                 <Table>
                     <thead>
                         <tr>
-                            <th>Element position</th>
-                            <th>Element name</th>
-                            <th>Symbol</th>
-                            <th>Atomic mass</th>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Contact Number</th>
+                            <th>Doctor Name</th>
+                            <th>Department</th>
+                            <th>Actions</th>
 
                         </tr>
                     </thead>
