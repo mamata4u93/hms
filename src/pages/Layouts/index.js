@@ -15,6 +15,7 @@ function Layouts(props) {
                 <Grid.Col xs={10}>
                     <Hearder />
                     <Outlet />
+                    
                 </Grid.Col>
             </Grid>
             <Footer />

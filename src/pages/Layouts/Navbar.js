@@ -4,16 +4,19 @@ import { useTheme } from "../../theme/use-theme";
 import { createStyles, Group, Image, Navbar, ScrollArea } from '@mantine/core';
 import {
     IconNotes,
-    IconCalendarStats,
+    IconStethoscopeOff,
     IconGauge,
-    IconPresentationAnalytics,
-    IconFileAnalytics,
-    IconAdjustments,
-    IconLock,
+    IconFileDescription,
+    IconUserPlus,
+    IconHelp,
+    IconHomeX,
+    IconEye,
 } from '@tabler/icons';
 import logo from '../../assets/logo.png';
 import { LinksGroup } from '../../components/NavbarLinksGroup';
 const HEADER_HEIGHT = 84;
+
+
 
 const useStyles = createStyles((theme) => ({
 
@@ -35,34 +38,35 @@ const useStyles = createStyles((theme) => ({
 
 }));
 
-
-
 const mockdata = [
     { label: 'Dashboard', icon: IconGauge },
     {
         label: 'Patients',
-        icon: IconNotes,
+        icon: IconUserPlus,
         initiallyOpened: true,
         links: [
-            { label: 'Overview', link: '/' },
-            { label: 'Forecasts', link: '/' },
-            { label: 'Outlook', link: '/' },
-            { label: 'Real time', link: '/' },
+            { label: 'Admission', link: '/' },
+            { label: 'Patient Details', link: '/' },
+            { label: 'Symptoms', link: '/' },
+            { label: 'Medications', link: '/' },
+            { label: 'Diagnosis', link: '/' },
+            { label: 'Lab Reports', link: '/' },
+            { label: 'Allergies', link: '/' },
+            { label: 'Appointments', link: '/' },
         ],
     },
     {
         label: 'Appointments',
-        icon: IconCalendarStats,
+        icon: IconStethoscopeOff,
         links: [
             { label: 'Upcoming releases', link: '/' },
-            { label: 'Previous releases', link: '/' },
-            { label: 'Releases schedule', link: '/' },
+
         ],
     },
-    { label: 'Overview', icon: IconPresentationAnalytics },
-    { label: 'Reporting', icon: IconFileAnalytics },
-    { label: 'Help', icon: IconAdjustments },
-    
+    { label: 'Overview', icon: IconEye },
+    { label: 'Reporting', icon: IconFileDescription},
+    { label: 'Help', icon: IconHelp },
+
 ];
 
 const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);

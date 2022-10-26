@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import Layouts from "../pages/Layouts";
 import Splash from "../pages/Auth/Splash";
 import Home from "../pages/Auth/Home";
+import PatientsSummary from "../pages/PatientsSummary";
 
 const RequireAuth = () => {
   const token = useSelector((state) => state.auth.token)
@@ -34,6 +35,7 @@ function Routers() {
 
           {/* Without token */}
           <Route path="/home" element={<Home />} />
+          <Route path="/patientsSummary" element={<PatientsSummary />} />
 
           <Route element={<RequireAuth />}>
             {/* With token */}

@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "../../theme/use-theme";
-import { createStyles, Header, Group, TextInput, Grid, Avatar, Text, Menu,UnstyledButton, } from '@mantine/core';
+import { createStyles, Header, Group, TextInput, Grid, Avatar, Text, Menu, UnstyledButton, Burger, } from '@mantine/core';
 import { IconSearch, } from '@tabler/icons';
 import man from '../../assets/man.png';
+import { useDisclosure } from '@mantine/hooks';
 const HEADER_HEIGHT = 84;
 
 const useStyles = createStyles((theme) => ({
@@ -71,10 +72,27 @@ const useStyles = createStyles((theme) => ({
         },
     },
 
+    burger: {
+        [theme.fn.largerThan('xs')]: {
+            display: 'none',
+        },
+    },
+
+    tabs: {
+        [theme.fn.smallerThan('sm')]: {
+            display: 'none',
+        },
+    },
+
+    tabsList: {
+        borderBottom: '0 !important',
+    },
+
 }));
 
 
 function Hearder(props) {
+    const [opened, { toggle }] = useDisclosure(false);
     const { classes, cx } = useStyles();
     let navigate = useNavigate();
     const [darkMode, setDarkMode] = useTheme();
@@ -98,29 +116,38 @@ function Hearder(props) {
 
                     <Grid.Col xs={2} offset={2}>
                         <Group>
-                            <div>
-                                <Text color="dimmed" size="xs">
-                                    <h4>Welcome, Admin</h4>
-                                </Text>
-                            </div>
-                            <Avatar src={man} radius="xl" />
-                        </Group>
-
-
-                        {/* <Menu.Target>
-                            <UnstyledButton
-                                className={cx(classes.user, { [classes.userActive]: userMenuOpened })}
+                            <Burger opened={opened} onClick={toggle} className={classes.burger} size="sm" />
+                            <Menu
+                                width={160}
+                                position="bottom-end"
+                                transition="pop-top-right"
+                                onClose={() => setUserMenuOpened(false)}
+                                onOpen={() => setUserMenuOpened(true)}
                             >
-                                <Group spacing={7}>
-                                    <div>
-                                        <Text color="dimmed" size="xs">
-                                            <h4>Welcome, Admin</h4>
-                                        </Text>
-                                    </div>
-                                    <Avatar src={man} radius="xl" />
-                                </Group>
-                            </UnstyledButton>
-                        </Menu.Target> */}
+                                <Menu.Target>
+                                    <UnstyledButton>
+                                        <Group>
+                                            <div>
+                                                <Text color="dimmed" size="xs">
+                                                    <h4>Welcome, Admin</h4>
+                                                </Text>
+                                            </div>
+                                            <Avatar src={man} radius="xl" />
+                                        </Group>
+                                    </UnstyledButton>
+                                </Menu.Target>
+
+                                <Menu.Dropdown>
+                                    <Menu.Item>
+                                        Login
+                                    </Menu.Item>
+                                    <div className='home-border'></div>
+                                    <Menu.Item>
+                                        Logout
+                                    </Menu.Item>
+                                </Menu.Dropdown>
+                            </Menu>
+                        </Group>
                     </Grid.Col>
                 </Grid>
             </Header >
