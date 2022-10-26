@@ -34,6 +34,7 @@ const elements = [
 function PatientsSummary() {
     const [opened, setOpened] = useState(false);
     const [redeo, setRedeo] = useState(false);
+    const [active, setActive] = useState(false);
 
     const rows = elements.map((element) => (
         <tr key={element.name}>
@@ -82,12 +83,12 @@ function PatientsSummary() {
                             </Button>
 
                             <Group >
-                                <span onClick={() => setOpened((o) => !o)}><IconArrowBigTop /></span>
+                                <span onClick={() => setRedeo((o) => !o)}><IconArrowBigTop /></span>
                             </Group>
                             <Dialog
-                                opened={opened}
+                                opened={redeo}
                                 withCloseButton
-                                onClose={() => setOpened(false)}
+                                onClose={() => setRedeo(false)}
                                 size="xl"
                                 radius="md"
                                 position={{ top: 90, right: 20 }}
@@ -99,12 +100,12 @@ function PatientsSummary() {
                             </Dialog>
 
                             <Group >
-                                <span onClick={() => setOpened((o) => !o)}><IconArrowBigDown /></span>
+                                <span onClick={() => setActive((o) => !o)}><IconArrowBigDown /></span>
                             </Group>
                             <Dialog
-                                opened={opened}
+                                opened={active}
                                 withCloseButton
-                                onClose={() => setOpened(false)}
+                                onClose={() => setActive(false)}
                                 size="xl"
                                 radius="md"
                                 position={{ top: 90, right: 20 }}
