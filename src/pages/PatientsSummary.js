@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import {
-    Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio
-} from '@mantine/core';
+import { Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio, Modal, Avatar } from '@mantine/core';
 import {
     IconArrowBigTop,
     IconArrowBigDown,
@@ -13,6 +11,7 @@ import {
     IconCalendarMinus,
     IconPhoneOutgoing
 } from '@tabler/icons';
+import camera from '../assets/camera.png';
 
 const elements = [
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
@@ -26,8 +25,6 @@ const elements = [
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
-
-
 ];
 
 
@@ -35,6 +32,7 @@ function PatientsSummary() {
     const [opened, setOpened] = useState(false);
     const [redeo, setRedeo] = useState(false);
     const [active, setActive] = useState(false);
+    const [modal, setModal] = useState(false);
 
     const rows = elements.map((element) => (
         <tr key={element.name}>
@@ -69,8 +67,6 @@ function PatientsSummary() {
         </tr>
     ));
 
-
-
     return (
         <>
             <div className="summary">
@@ -78,9 +74,27 @@ function PatientsSummary() {
                     <Grid.Col xs={9}></Grid.Col>
                     <Grid.Col xs={3}>
                         <div className='icon-bar'>
-                            <Button>
+                            {/* <Button>
                                 create patient
-                            </Button>
+                            </Button> */}
+
+                            {/* <Modal
+                                opened={modal}
+                                onClose={() => setModal(false)}
+                                title="Create Patient"
+                            >
+                                <div className='modal-section'>
+                                    <Avatar src={camera} radius="xl" />
+                                    <p>10MB Max size of Image</p>
+                                    <h5>Basic Details</h5>
+
+
+                                </div>
+                            </Modal> */}
+
+                            <Group position="center">
+                                <Button onClick={() => setModal(true)}>create patient</Button>
+                            </Group>
 
                             <Group >
                                 <span onClick={() => setRedeo((o) => !o)}><IconArrowBigTop /></span>
@@ -91,7 +105,7 @@ function PatientsSummary() {
                                 onClose={() => setRedeo(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 90, right: 20 }}
+                                position={{ top: 130, right: 40 }}
                             >
                                 <Text>
                                     Lorem ipsum is a dummy text is a simply industry stan
@@ -108,14 +122,14 @@ function PatientsSummary() {
                                 onClose={() => setActive(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 90, right: 20 }}
+                                position={{ top: 130, right: 40 }}
                             >
                                 <Text>
-                                    dsfdssdfdssfd
+
                                 </Text>
                             </Dialog>
 
-                            <Group >
+                            <Group>
                                 <span onClick={() => setOpened((o) => !o)}><IconLayoutGrid /></span>
                             </Group>
                             <Dialog
@@ -124,17 +138,17 @@ function PatientsSummary() {
                                 onClose={() => setOpened(false)}
                                 size="xl"
                                 radius="md"
-                                position={{ top: 90, right: 20 }}
+                                position={{ top: 130, right: 40, }}
                             >
                                 <Text>
                                     <div>
+                                        <h5>Select Parameters</h5>
                                         <TextInput
                                             icon={<IconSearch size={18} stroke={1.5} />}
                                             radius="xl"
                                             size="md"
                                             placeholder="Search questions"
                                             rightSectionWidth={42}
-
                                         />
                                     </div>
                                     <div className='radio-section'>
@@ -170,7 +184,6 @@ function PatientsSummary() {
                             <th>Doctor Name</th>
                             <th>Department</th>
                             <th>Actions</th>
-
                         </tr>
                     </thead>
                     <tbody>{rows}</tbody>
