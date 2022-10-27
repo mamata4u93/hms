@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio, Modal, Avatar } from '@mantine/core';
+import { Pagination, Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio, Modal, Avatar, createStyles, MultiSelect } from '@mantine/core';
 import {
     IconArrowBigTop,
     IconArrowBigDown,
@@ -9,7 +9,8 @@ import {
     IconPencil,
     IconCirclePlus,
     IconCalendarMinus,
-    IconPhoneOutgoing
+    IconPhoneOutgoing,
+    IconChevronDown
 } from '@tabler/icons';
 import camera from '../assets/camera.png';
 
@@ -27,12 +28,34 @@ const elements = [
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
 ];
 
+const useStyles = createStyles((theme) => ({
+    root: {
+        position: 'relative',
+    },
+
+    input: {
+        height: 'auto',
+        paddingTop: 18,
+    },
+
+    label: {
+        position: 'absolute',
+        pointerEvents: 'none',
+        fontSize: theme.fontSizes.xs,
+        paddingLeft: theme.spacing.sm,
+        paddingTop: theme.spacing.sm / 2,
+        zIndex: 1,
+    },
+}));
 
 function PatientsSummary() {
     const [opened, setOpened] = useState(false);
     const [redeo, setRedeo] = useState(false);
     const [active, setActive] = useState(false);
     const [modal, setModal] = useState(false);
+    const { classes } = useStyles();
+
+
 
     const rows = elements.map((element) => (
         <tr key={element.name}>
@@ -74,11 +97,8 @@ function PatientsSummary() {
                     <Grid.Col xs={9}></Grid.Col>
                     <Grid.Col xs={3}>
                         <div className='icon-bar'>
-                            {/* <Button>
-                                create patient
-                            </Button> */}
-
-                            {/* <Modal
+                            <Modal
+                                size="45%"
                                 opened={modal}
                                 onClose={() => setModal(false)}
                                 title="Create Patient"
@@ -87,10 +107,67 @@ function PatientsSummary() {
                                     <Avatar src={camera} radius="xl" />
                                     <p>10MB Max size of Image</p>
                                     <h5>Basic Details</h5>
-
-
                                 </div>
-                            </Modal> */}
+
+                                <Grid>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Patient Name *" placeholder="Divya Kumar Sri " classNames={classes}/>
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Date of Birth ( DD/MM/YY )*" placeholder="02/10/1987" classNames={classes} />
+                                    </Grid.Col>
+
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Email ID *" placeholder="Divyakumar486@gmail.com" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Mobile number *" placeholder="0987654321" classNames={classes} />
+                                    </Grid.Col>
+                                </Grid>
+
+                                <h5 className='additional'>Additional Details</h5>
+
+                                <Grid>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Address ( House / Flat no. / Street name  )" placeholder="Lorem Ipsum is simply dummy" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="State" placeholder="Karnataka" classNames={classes} />
+                                    </Grid.Col>
+
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="City" placeholder="Bengaluru" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Pincode" placeholder="560078" classNames={classes} />
+                                    </Grid.Col>
+
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Aadhar Card Number ( 12 digits )" placeholder="1234 - 9081 - 7896" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Emergency Contact" placeholder="9865437021" classNames={classes} />
+                                    </Grid.Col>
+
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Insurance ID" placeholder="123456789012345" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Blood group" placeholder="B - ve" classNames={classes} />
+                                    </Grid.Col>
+
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Weight ( in Kgs )" placeholder="54" classNames={classes} />
+                                    </Grid.Col>
+                                    <Grid.Col xs={6}>
+                                        <TextInput label="Height ( in Cms )" placeholder="154" classNames={classes} />
+                                    </Grid.Col>
+                                </Grid>
+                                <br />
+                                <div className='modal-section'>
+                                    <Button onClick={() => setModal(true)}>create patient</Button>
+                                </div>
+                            </Modal>
 
                             <Group position="center">
                                 <Button onClick={() => setModal(true)}>create patient</Button>
@@ -189,6 +266,7 @@ function PatientsSummary() {
                     <tbody>{rows}</tbody>
 
                 </Table>
+                {/* <Pagination total={10} /> */}
             </div>
 
         </>

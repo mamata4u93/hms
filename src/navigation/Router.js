@@ -7,11 +7,14 @@ import {
   Outlet,
   useLocation,
 } from "react-router-dom";
+import Error from "../pages/Error";
 import { useSelector } from 'react-redux'
 import Layouts from "../pages/Layouts";
 import Splash from "../pages/Auth/Splash";
 import Home from "../pages/Auth/Home";
 import PatientsSummary from "../pages/PatientsSummary";
+import PatientsDetails from "../pages/PatientsDetails";
+
 
 const RequireAuth = () => {
   const token = useSelector((state) => state.auth.token)
@@ -34,8 +37,11 @@ function Routers() {
         <Route element={<Layouts />}>
 
           {/* Without token */}
+          <Route path="/error" element={<Error />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/patientsSummary" element={<PatientsSummary />} />
+          <Route path="/patientssummary" element={<PatientsSummary />} />
+          <Route path="/patientsdetails" element={<PatientsDetails />} />
+          
 
           <Route element={<RequireAuth />}>
             {/* With token */}
