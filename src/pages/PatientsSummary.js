@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Pagination, Grid, Dialog, Group, Button, Text, Table, ActionIcon, TextInput, Radio, Modal, Avatar, createStyles, MultiSelect } from '@mantine/core';
 import {
-    IconArrowBigTop,
-    IconArrowBigDown,
+    IconUpload,
+    IconDownload,
     IconLayoutGrid,
     IconCircleCaretRight,
     IconSearch,
@@ -10,7 +10,8 @@ import {
     IconCirclePlus,
     IconCalendarMinus,
     IconPhoneOutgoing,
-    IconChevronDown
+    IconChevronDown,
+    Indicator
 } from '@tabler/icons';
 import camera from '../assets/camera.png';
 
@@ -90,6 +91,8 @@ function PatientsSummary() {
         </tr>
     ));
 
+
+
     return (
         <>
             <div className="summary">
@@ -111,10 +114,12 @@ function PatientsSummary() {
 
                                 <Grid>
                                     <Grid.Col xs={6}>
-                                        <TextInput label="Patient Name *" placeholder="Divya Kumar Sri " classNames={classes}/>
+                                        <TextInput label="Patient Name *" placeholder="Divya Kumar Sri " classNames={classes} />
                                     </Grid.Col>
                                     <Grid.Col xs={6}>
                                         <TextInput label="Date of Birth ( DD/MM/YY )*" placeholder="02/10/1987" classNames={classes} />
+                                       
+
                                     </Grid.Col>
 
                                     <Grid.Col xs={6}>
@@ -174,7 +179,7 @@ function PatientsSummary() {
                             </Group>
 
                             <Group >
-                                <span onClick={() => setRedeo((o) => !o)}><IconArrowBigTop /></span>
+                                <span onClick={() => setRedeo((o) => !o)}><IconUpload /></span>
                             </Group>
                             <Dialog
                                 opened={redeo}
@@ -191,7 +196,7 @@ function PatientsSummary() {
                             </Dialog>
 
                             <Group >
-                                <span onClick={() => setActive((o) => !o)}><IconArrowBigDown /></span>
+                                <span onClick={() => setActive((o) => !o)}><IconDownload /></span>
                             </Group>
                             <Dialog
                                 opened={active}

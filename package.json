@@ -6,6 +6,7 @@
     "@craco/craco": "^6.4.3",
     "@emotion/react": "^11.10.4",
     "@mantine/core": "^5.6.1",
+    "@mantine/dates": "^5.6.2",
     "@mantine/ds": "^5.6.1",
     "@mantine/hooks": "^5.6.1",
     "@mantine/prism": "^5.6.1",

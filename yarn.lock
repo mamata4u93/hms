@@ -1574,6 +1574,13 @@
     "@radix-ui/react-scroll-area" "1.0.0"
     react-textarea-autosize "8.3.4"
 
+"@mantine/dates@^5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@mantine/dates/-/dates-5.6.2.tgz#ad5a90450d1a3355439688e34d2b4a57042f79b5"
+  integrity sha512-ODc5VDIF/CzOxkC5lOCKkAY+Jk6fNk1ILymDL/eZ95juHsrqviG4kvQUTUehHXI2ikA/tGIfN3AhZLU9RWHipA==
+  dependencies:
+    "@mantine/utils" "5.6.2"
+
 "@mantine/ds@^5.6.1":
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@mantine/ds/-/ds-5.6.1.tgz#f28ad18c30d8a5a6fb6d009958f0d559f2d4c1de"
@@ -1606,6 +1613,11 @@
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.6.1.tgz#5ab75c2185b5f64e78c70e1d0a5cbf56c9c1c8e9"
   integrity sha512-pu7ajDLJfW9oMVfzK6DKkhuaayRiCEZLfB6Be+wbL9joWrzMCZkc0tA3KxET7TGSO98d4NpjjmbEg2IsjT8Alw==
+
+"@mantine/utils@5.6.2":
+  version "5.6.2"
+  resolved "https://registry.yarnpkg.com/@mantine/utils/-/utils-5.6.2.tgz#72ffa0e6c8a0c69554aa4c43b6f52663f87d785f"
+  integrity sha512-oWBVtewwIiqqKMCw8JahrHsDb1h68Eq878RWhnH+wOC1FOz1oV0ZXz0+5/gMUFZGss0duWEZXTVXafkBnD2HZA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
