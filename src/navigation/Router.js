@@ -7,14 +7,13 @@ import {
   Outlet,
   useLocation,
 } from "react-router-dom";
-import Error from "../pages/Error";
 import { useSelector } from 'react-redux'
 import Layouts from "../pages/Layouts";
 import Splash from "../pages/Auth/Splash";
-import Home from "../pages/Auth/Home";
-import PatientsSummary from "../pages/PatientsSummary";
-import PatientsDetails from "../pages/PatientsDetails";
-import Symptoms from "../pages/Symptoms";
+import Home from "../pages/Home/Home";
+import Error from "../pages/Patient/Error";
+import PatientsSummary from "../pages/Patient/PatientsSummary";
+import PatientsDetails from "../pages/Patient/PatientsDetails";
 
 
 const RequireAuth = () => {
