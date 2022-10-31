@@ -5,21 +5,21 @@ import {
 
 } from '@tabler/icons';
 
-import datels from '../assets/datels.png';
-import contact from '../assets/contact.png';
-import flower from '../assets/flower.png';
-import add from '../assets/add.png';
-import mobile from '../assets/mobile.png';
-import location from '../assets/location.png';
-import phone from '../assets/phone.png';
-import simptom from '../assets/simptom.png';
-import drop from '../assets/drop.png';
-import KG from '../assets/KG.png';
-import arrow from '../assets/arrow.png';
-import tomato from '../assets/tomato.png';
-import milk from '../assets/milk.png';
-import Groundnut from '../assets/Groundnut.png';
-import Egg from '../assets/Egg.png';
+import datels from '../../assets/datels.png';
+import contact from '../../assets/contact.png';
+import flower from '../../assets/flower.png';
+import add from '../../assets/add.png';
+import mobile from '../../assets/mobile.png';
+import location from '../../assets/location.png';
+import phone from '../../assets/phone.png';
+import simptom from '../../assets/simptom.png';
+import drop from '../../assets/drop.png';
+import KG from '../../assets/KG.png';
+import arrow from '../../assets/arrow.png';
+import tomato from '../../assets/tomato.png';
+import milk from '../../assets/milk.png';
+import Groundnut from '../../assets/Groundnut.png';
+import Egg from '../../assets/Egg.png';
 
 
 const elements = [

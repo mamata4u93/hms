@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Image } from '@mantine/core';
-import error from '../assets/error.png';
+import error from '../../assets/error.png';
 
 
 

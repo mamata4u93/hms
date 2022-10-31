@@ -13,7 +13,7 @@ import {
     IconChevronDown,
     Indicator
 } from '@tabler/icons';
-import camera from '../assets/camera.png';
+import camera from '../../assets/camera.png';
 
 const elements = [
     { position: 5984845848, name: 'Amit Kumar ', symbol: 1987654321, mass: 'Dr. Shubham Mishra', department: 'Rehabilitation', },
