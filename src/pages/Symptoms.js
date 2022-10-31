@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Breadcrumbs, Image, Anchor, Text, Group, Avatar, Button } from '@mantine/core';
+import { Grid, Breadcrumbs, Image, Anchor, Text, Group, Avatar, Button } from '@mantine/core';
 import {
     IconArrowNarrowLeft,
+    IconDownload,
+
 } from '@tabler/icons';
 import datels from '../assets/datels.png';
 import simptom from '../assets/simptom.png';
@@ -12,6 +14,7 @@ import phone from '../assets/phone.png';
 
 function Symptoms() {
     const [modal, setModal] = useState(false);
+    const [redeo, setRedeo] = useState(false);
     const items = [
         { title: 'Back', href: '#' },
     ].map((item, index) => (
@@ -25,9 +28,8 @@ function Symptoms() {
     return (
         <>
             <div className="symptoms-disease">
-
                 <Breadcrumbs separator=""><IconArrowNarrowLeft />{items}</Breadcrumbs>
-                <div style={{ width: 33,marginTop: 5  }}>
+                <div style={{ width: 33, marginTop: 5 }}>
                     <Image src={datels} radius="xl" />
                 </div>
 
@@ -61,7 +63,21 @@ function Symptoms() {
                 <Group position="center">
                     <Button onClick={() => setModal(true)}>create patient</Button>
                 </Group>
+            </div>
 
+            <div className='icon-bar'>
+                <Grid>
+                    <Grid.Col xs={9}></Grid.Col>
+                    <Grid.Col xs={3}>
+                        <div className='dd'>
+                            <div className='modal-section'>
+                                <Button onClick={() => setModal(true)}>create patient</Button>
+
+                            </div>
+                            <span onClick={() => setRedeo((o) => !o)}><IconDownload /></span>
+                        </div>
+                    </Grid.Col>
+                </Grid>
             </div>
 
         </>
