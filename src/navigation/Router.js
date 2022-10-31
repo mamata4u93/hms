@@ -14,6 +14,7 @@ import Home from "../pages/Home/Home";
 import Error from "../pages/Patient/Error";
 import PatientsSummary from "../pages/Patient/PatientsSummary";
 import PatientsDetails from "../pages/Patient/PatientsDetails";
+import Symptoms from "../pages/Patient/Symptoms";
 
 
 const RequireAuth = () => {
