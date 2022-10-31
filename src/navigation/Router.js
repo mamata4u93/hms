@@ -41,6 +41,7 @@ function Routers() {
           <Route path="/home" element={<Home />} />
           <Route path="/patientssummary" element={<PatientsSummary />} />
           <Route path="/patientsdetails" element={<PatientsDetails />} />
+          <Route path="/symptoms" element={<Symptoms />} />
           
 
           <Route element={<RequireAuth />}>
