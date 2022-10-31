@@ -14,6 +14,7 @@ import Splash from "../pages/Auth/Splash";
 import Home from "../pages/Auth/Home";
 import PatientsSummary from "../pages/PatientsSummary";
 import PatientsDetails from "../pages/PatientsDetails";
+import Symptoms from "../pages/Symptoms";
 
 
 const RequireAuth = () => {
@@ -41,6 +42,7 @@ function Routers() {
           <Route path="/home" element={<Home />} />
           <Route path="/patientssummary" element={<PatientsSummary />} />
           <Route path="/patientsdetails" element={<PatientsDetails />} />
+          <Route path="/symptoms" element={<Symptoms />} />
           
 
           <Route element={<RequireAuth />}>

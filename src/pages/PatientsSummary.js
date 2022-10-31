@@ -118,7 +118,7 @@ function PatientsSummary() {
                                     </Grid.Col>
                                     <Grid.Col xs={6}>
                                         <TextInput label="Date of Birth ( DD/MM/YY )*" placeholder="02/10/1987" classNames={classes} />
-                                       
+
 
                                     </Grid.Col>
 
@@ -256,7 +256,17 @@ function PatientsSummary() {
                     </Grid.Col>
                 </Grid>
                 <h5>Patients</h5>
-
+                <Radio.Group
+                    name="favoriteFramework"
+                    label="Select your favorite framework/library"
+                    description="This is anonymous"
+                    withAsterisk
+                >
+                    <Radio value="react" label="React" />
+                    <Radio value="svelte" label="Svelte" />
+                    <Radio value="ng" label="Angular" />
+                    <Radio value="vue" label="Vue" />
+                </Radio.Group>
                 <Table>
                     <thead>
                         <tr>
